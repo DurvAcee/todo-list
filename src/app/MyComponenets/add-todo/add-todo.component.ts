@@ -14,12 +14,21 @@ export class AddTodoComponent {
 
     onSubmit(){
       const todo = {
-        sno: 8,
-        title: this.title,
-        desc: this.desc,
-        active: true
-      }
+          sno: 8,
+          title: this.title,
+          desc: this.desc,
+          active: true
+        }
 
-      this.todoAdd.emit(todo);
+        if(!this.title){
+          console.log('Add the Details');
+        } else {
+          this.todoAdd.emit(todo);
+        }
+    }
+
+    clearInputs() {
+      this.title = '';
+      this.desc = '';
     }
 }
